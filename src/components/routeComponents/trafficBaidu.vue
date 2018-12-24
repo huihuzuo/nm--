@@ -1,8 +1,8 @@
 <template>
  <div>
-   <luxianWeidu></luxianWeidu>
-   <xingzhengquhuaWeidu></xingzhengquhuaWeidu>
-   <timeWeidu></timeWeidu>
+   <luxianWeidu v-if="type === 'lx'"></luxianWeidu>
+   <xingzhengquhuaWeidu v-if="type === 'xzqh'"></xingzhengquhuaWeidu>
+   <timeWeidu v-if="type === 'shijian'"></timeWeidu>
  </div>
 </template>
 
@@ -12,6 +12,21 @@
   import timeWeidu from './timeWeidu'
   export default {
     name: 'trafficBaidu',
+    data(){
+      return{
+        type: null
+      }
+    },
+    mounted () {
+      this.type = this.$route.query.type
+      console.log(this.type)
+    },
+    watch: {
+      '$route' (v, ov) {
+        this.type = this.$route.query.type
+        console.log(this.$route.query.type)
+      }
+    },
     components:{
       luxianWeidu,
       xingzhengquhuaWeidu,

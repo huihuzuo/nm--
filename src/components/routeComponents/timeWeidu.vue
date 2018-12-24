@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="trafficHeader-wrap">
+    <!--<div class="trafficHeader-wrap">
       <div class="trafficHeader-left">
         <img class='img' src="" alt="">
         <div class="trafficHeader-left-second">
           <el-dropdown>
           <span class="el-dropdown-link">
             <span>交通流量-高德</span>
-            <i class="el-icon-arrow-down el-icon--right"></i>
+            <i class="el-icon-arrow-down el-icon&#45;&#45;right"></i>
           </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>百度</el-dropdown-item>
@@ -36,7 +36,7 @@
           {{i.time}}
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="selector-header">
       <div class="selector-innerWrap">
         <div class="first-col">

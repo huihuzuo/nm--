@@ -1,8 +1,8 @@
 <template>
- <div>
-   <luxianWeidu></luxianWeidu>
-   <xingzhengquhuaWeidu></xingzhengquhuaWeidu>
-   <timeWeidu></timeWeidu>
+ <div class="tt">
+   <luxianWeidu v-if="type === 'lx'"></luxianWeidu>
+   <xingzhengquhuaWeidu v-if="type === 'xzqh'"></xingzhengquhuaWeidu>
+   <timeWeidu v-if="type === 'shijian'"></timeWeidu>
  </div>
 </template>
 
@@ -14,7 +14,17 @@
       name: 'trafficGaode',
       data(){
         return{
-
+           type: null
+        }
+      },
+      mounted () {
+        this.type = this.$route.query.type
+        console.log(this.type)
+      },
+      watch: {
+        '$route' (v, ov) {
+          this.type = this.$route.query.type
+          console.log(this.$route.query.type)
         }
       },
       components:{

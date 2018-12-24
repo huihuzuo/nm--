@@ -1,6 +1,6 @@
 <template>
    <div>
-     <trafficCountHeader></trafficCountHeader>
+     <!--<trafficCountHeader></trafficCountHeader>-->
      <div class="xingzhengquhuaWeidu-content">
        <selectorHeader></selectorHeader>
        <div class="echart-wrap">

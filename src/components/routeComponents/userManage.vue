@@ -1,7 +1,7 @@
 <template>
     <div>
       <div>
-        <headerTop @showWeidu="showWeidu()" :weiduHandler="weiduHandler"></headerTop>
+        <headerTop :flagHandler="flagHandler" :weiduHandler="weiduHandler"></headerTop>
       </div>
       <div>
         <router-view/>

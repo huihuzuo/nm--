@@ -129,12 +129,12 @@ export default new Router({
       component:userManage,
       children:[
         {
-          path:"/userManage/trafficGaode",
+          path:"/userManage/trafficGaode:type?",
           name:"trafficGaode",
           component:trafficGaode,
         },
         {
-          path:"/userManage/trafficBaidu",
+          path:"/userManage/trafficBaidu:type?",
           name:"trafficBaidu",
           component:trafficBaidu,
         },

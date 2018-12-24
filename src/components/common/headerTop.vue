@@ -7,27 +7,16 @@
           <div>交通流量-</div>
           <div class="selector">
             <el-select v-model="value1">
-              <el-option @click.native="goChoice('/userManage/trafficGaode')">高德</el-option>
-              <el-option @click.native="goChoice('/userManage/trafficBaidu')">百度</el-option>
+              <el-option @click.native="goChoice('trafficGaode')" value="高德"></el-option>
+              <el-option @click.native="goChoice('trafficBaidu')" value="百度"></el-option>
             </el-select>
           </div>
-
-          <!--<el-dropdown>
-          <span class="el-dropdown-link">
-            <span>交通流量-</span>
-            <i class="el-icon-arrow-down el-icon&#45;&#45;right"></i>
-          </span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item @click.native="goChoice('/userManage/trafficGaode')">高德</el-dropdown-item>
-              <el-dropdown-item @click.native="goChoice('/userManage/trafficBaidu')">百度</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>-->
         </div>
       </div>
       <div class="trafficHeader-center">
-        <div class="header-choose" @click="currentItem()">路线维度</div>
-        <div class="header-choose" @click="currentItem()">行政区划维度</div>
-        <div class="header-choose" @click="currentItem()">时间维度</div>
+        <div class="header-choose active" @click="currentItem('lx')">路线维度</div>
+        <div class="header-choose" @click="currentItem('xzqh')">行政区划维度</div>
+        <div class="header-choose" @click="currentItem('shijian')">时间维度</div>
       </div>
       <div class="trafficHeader-right">
         <div
@@ -41,49 +30,6 @@
         </div>
       </div>
     </div>
-    <!--<div class="selector-header">
-      <div class="selector-innerWrap">
-        <div class="first-col">
-          <div class="first-div">路线：</div>
-          <el-select v-model="formData" clearable placeholder="请选择" size="small">
-            <el-option
-              v-for="item in luxianList"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-          </el-select>
-        </div>
-        <div class="second-col">
-          <div class="first-div">行政区划：</div>
-          <el-select v-model="formData" clearable placeholder="请选择" size="small">
-            <el-option
-              v-for="item in division"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-          </el-select>
-        </div>
-        <div class="third-col">
-          <div class="first-div">选择时间：</div>
-          <el-date-picker
-            size="small"
-            v-model="value5"
-            type="year"
-            placeholder="选择年">
-          </el-date-picker>
-          <el-date-picker
-            size="small"
-            v-model="value4"
-            type="month"
-            placeholder="选择月">
-          </el-date-picker>
-        </div>
-        <div class="forth-col">统计分析</div>
-      </div>
-    </div>
-    <timeWeiduEchart></timeWeiduEchart>-->
   </div>
 </template>
 
@@ -91,11 +37,15 @@
     export default {
       name: 'headerTop',
       props: {
-        weiduHandler:{
-          type:Function,
-          require:true,
-          default:function(){}
-        },
+        // weiduHandler:{
+        //   type:Function,
+        //   require:true,
+        //   default:function(){}
+        // },
+      },
+      mounted () {
+        this.type = 'lx'
+        this.goChoice('trafficGaode')
       },
       data(){
          return{
@@ -107,18 +57,33 @@
              {'index':'3', 'time':'月'},
              {'index':'4', 'time':'季'},
              {'index':'5', 'time':'年'},],
-           value1:''
+           value1:'',
+           type: null,
+           wrapType: 'trafficGaode'
          }
       },
       methods:{
         chooseTimeEvent(i){
           this.timeSelected = i.index
         },
-        goChoice(path){
-          this.$router.push(path)
+        goChoice(name){
+          // this.wrapType = name
+          this.$router.push({
+            name:  name,
+            query: {
+              type: this.type
+            }
+          })
         },
-        currentItem(){
-           //this.$emit('showWeidu')
+        currentItem(type){
+          this.type = type
+          this.$router.push({
+            name:  name,
+            query: {
+              type: this.type
+            }
+          })
+           // this.$emit('showWeidu', type)
         }
       }
     }
@@ -179,7 +144,7 @@
           cursor: pointer;
         }
       }
-      .titleSelected{
+      .active{
         border-left:1px solid rgb(26,130,238);
         border-right:1px solid rgb(26,130,238);
         border-bottom:2px solid #eee
