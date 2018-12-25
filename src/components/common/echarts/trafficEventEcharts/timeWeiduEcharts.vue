@@ -44,6 +44,7 @@
               data:['阻断次数','阻断里程'],
               icon:'circle',
               left:'right',
+              padding: [5, 150, 15, 20],
             },
             color: ['rgb(118,180,245)','rgb(255,137,137)'],
             tooltip : {
@@ -169,6 +170,7 @@
               data:['突发性','计划性'],
               icon:'circle',
               left:'right',
+              padding: [5, 150, 15, 20],
             },
             color: ['rgb(118,180,245)','rgb(255,137,137)'],
             tooltip : {

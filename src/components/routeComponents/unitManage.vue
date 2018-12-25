@@ -1,10 +1,21 @@
 <template>
-  <div>单位管理</div>
+  <div>
+    <div>
+      <trafficEventHeader></trafficEventHeader>
+    </div>
+    <div>
+      <router-view/>
+    </div>
+  </div>
 </template>
 
 <script>
+  import trafficEventHeader from '../common/trafficEventHeader'
     export default {
-        name: "unitManage"
+      name: "unitManage",
+      components:{
+        trafficEventHeader
+      }
     }
 </script>
 

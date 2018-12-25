@@ -5,7 +5,7 @@
      <div class="selector-header">
        <div class="selector-innerWrap">
          <div class="first-col">
-           <div class="first-div">行政等级：</div>
+           <div class="first-div">路线等级：</div>
            <el-select v-model="formData" clearable placeholder="请选择" size="small">
              <el-option
                v-for="item in division"
@@ -102,6 +102,9 @@
           border: 1px solid rgb(26, 130, 238);
           border-radius: 5px;
           color: rgb(26, 130, 238);
+          &:hover{
+            cursor: pointer;
+          }
         }
 
       }

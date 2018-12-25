@@ -1,8 +1,9 @@
-//此文件为配置路由的文件
+//配置路由的文件
 
 
 import Vue from 'vue'
 import Router from 'vue-router'
+
 
 //交通流量下的三个维度路由
 import luxianWeidu from '../components/routeComponents/luxianWeidu'
@@ -17,6 +18,12 @@ import xingzhengquhuaWeidu2 from '../components/routeComponents/xingzhengquhuaWe
 //交通流量-高德/百度 切换
 import trafficBaidu from '../components/routeComponents/trafficBaidu'
 import trafficGaode from '../components/routeComponents/trafficGaode'
+
+//交通事件-高德/行业 切换
+import trafficEventGaode from '../components/routeComponents/trafficEventGaode'
+import trafficEventHangye from '../components/routeComponents/trafficEventHangye'
+
+
 
 import HomePage from "../components/HomePage.vue"
 
@@ -145,6 +152,19 @@ export default new Router({
       path:"/unitManage",
       name:"unitManage",
       component:unitManage,
+      children:[
+        {
+          path:"/unitManage/trafficEventGaode:type?",
+          name:"trafficEventGaode",
+          component:trafficEventGaode,
+        },
+        {
+          path:"/unitManage/trafficEventHangye:type?",
+          name:"trafficEventHangye",
+          component:trafficEventHangye,
+        },
+
+      ]
     },
     {
       path:"/rightManage",

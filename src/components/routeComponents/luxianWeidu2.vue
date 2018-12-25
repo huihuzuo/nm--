@@ -1,6 +1,6 @@
 <template>
  <div>
-   <trafficEventHeader></trafficEventHeader>
+   <!--<trafficEventHeader></trafficEventHeader>-->
    <div class="luxianWeidu-content">
      <div class="selector-header">
        <div class="selector-innerWrap">
@@ -38,7 +38,6 @@
 </template>
 
 <script type="text/javascript">
-  import trafficEventHeader from '../common/trafficEventHeader'
   import trafficEventRanking from '../common/trafficEventRanking'
   import luxianWeiduEcharts from '../common/echarts/trafficEventEcharts/luxianWeiduEcharts'
   export default {
@@ -54,13 +53,10 @@
         }
       },
       components:{
-        trafficEventHeader,
         luxianWeiduEcharts,
         trafficEventRanking
       },
-      mounted(){
-
-      },
+      mounted(){},
       methods:{
         onSubmit() {
           console.log('submit!');

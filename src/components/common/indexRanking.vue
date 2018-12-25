@@ -2,10 +2,49 @@
   <div class="content">
     <div class="table-header">
       <div class="bar"></div>
-      <div>拥堵指数排名</div>
-      <div>拥堵频率排名</div>
+      <div @click="showRank('1')">拥堵指数排名</div>
+      <div @click="showRank('2')">拥堵频率排名</div>
     </div>
     <el-table
+      :header-cell-style="{background:'#ddecfc'}"
+      v-if="flag==='1'"
+      :data="indexRanking"
+      border
+      height="600px">
+      <el-table-column
+        prop="rank"
+        label="排名"
+        width="50"
+        align="center">
+      </el-table-column>
+      <el-table-column
+        prop="lx"
+        label="路线"
+        width="90"
+        align="center">
+      </el-table-column>
+      <el-table-column
+        prop="zcyd"
+        label="正常拥堵"
+        width="84"
+        align="center">
+      </el-table-column>
+      <el-table-column
+        prop="ycyd"
+        label="异常拥堵"
+        width="87"
+        align="center">
+      </el-table-column>
+      <el-table-column
+        prop="ydnum"
+        label="拥堵总数"
+        width="87"
+        align="center">
+      </el-table-column>
+    </el-table>
+    <el-table
+      :header-cell-style="{background:'#ddecfc'}"
+      v-if="flag==='2'"
       :data="indexRanking"
       border
       height="600px">
@@ -49,10 +88,13 @@
     data(){
       return{
         indexRanking:[],
+        flag:null
+
       }
     },
     mounted(){
       this.loadIndexRanking('indexRanking')
+      this.showRank('1')
     },
     methods:{
       loadIndexRanking(val){
@@ -67,7 +109,10 @@
           this.$message.error('err')
         })
       },
-      
+      showRank(flag){
+        this.flag=flag
+      }
+
     }
  }
 </script>
@@ -87,11 +132,18 @@
     }
     div:nth-child(2){
       margin-left:7px;
+      &:hover{
+        cursor: pointer;
+      }
     }
     div:nth-child(3){
       margin-left:10px;
+      &:hover{
+        cursor: pointer;
+      }
     }
 
   }
+
 
 </style>

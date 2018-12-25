@@ -78,6 +78,9 @@
          border:1px solid rgb(26,130,238);
          border-radius:5px;
          color:rgb(26,130,238);
+         &:hover{
+           cursor: pointer;
+         }
        }
 
      }

@@ -26,6 +26,7 @@
             },
             legend:{
               data:['拥堵指数','拥堵里程'],
+              padding: [5, 150, 15, 20],
               icon:'circle',
               left:'right',
             },
@@ -132,6 +133,7 @@
               data:['正常拥堵','异常拥堵'],
               icon:'circle',
               left:'right',
+              padding: [5, 150, 15, 20],
             },
             color: ['rgb(118,180,245)','rgb(255,137,137)'],
             tooltip : {

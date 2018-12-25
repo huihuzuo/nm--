@@ -28,6 +28,7 @@
               data:['拥堵次数','影响里程'],
               icon:'circle',
               left:'right',
+              padding: [5, 150, 15, 20],
             },
             color: ['rgb(118,180,245)','rgb(255,137,137)'],
             tooltip : {
@@ -173,8 +174,9 @@
             },
             legend: {
               orient: 'vertical',
-              x: 'right',
-              y:'center',
+              padding: [5, 150, 15, 20],
+              //x: 'right',
+              //y:'center',
               data:['重大灾害','重大活动','气象灾害','事故灾难','其他(突发)','施工养护','地质灾害','其他(计划)'],
               itemWidth:16,
               itemHeight:14

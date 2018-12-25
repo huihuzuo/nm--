@@ -1,43 +1,5 @@
 <template>
   <div>
-    <div class="trafficHeader-wrap">
-      <div class="trafficHeader-left">
-        <img class='img' src="" alt="">
-        <div class="trafficHeader-left-second">
-          <el-dropdown>
-          <span class="el-dropdown-link">
-            <span>交通事件</span>
-            <i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>高德</el-dropdown-item>
-              <el-dropdown-item>行业</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </div>
-      </div>
-      <div class="trafficHeader-center">
-        <div
-          class="header-choose"
-          @click="go(title)"
-          v-for="(title, index) in weiduList2"
-          :key="index"
-          :index="title.index"
-          :class="selected === title.alias ? 'titleSelected':''">
-          {{title.name}}</div>
-      </div>
-      <div class="trafficHeader-right">
-        <div
-          class="timeArr"
-          :class="timeSelected === i.index ? 'chooseTime':''"
-          v-for="(i,index) in timeList"
-          :key="index"
-          :index="i.index"
-          @click="chooseTimeEvent(i)">
-          {{i.time}}
-        </div>
-      </div>
-    </div>
     <div class="selector-header">
       <div class="selector-innerWrap">
         <div class="first-col">
@@ -101,41 +63,21 @@
         weiduList2:[],
         selected:null,
         timeList:[
-          {'index':'0', 'time':'时'},
-          {'index':'1', 'time':'日'},
-          {'index':'2', 'time':'周'},
-          {'index':'3', 'time':'月'},
-          {'index':'4', 'time':'季'},
-          {'index':'5', 'time':'年'},],
+          {index:'0', time:'时'},
+          {index:'1', 'time':'日'},
+          {index:'2', time:'周'},
+          {index:'3', time:'月'},
+          {index:'4', time:'季'},
+          {index:'5', time:'年'},],
         luxianList:[
-          {'index':'0', 'label':'全部路线'},
-          {'index':'1', 'label':'主路'},
-          {'index':'2', 'label':'辅路'},
+          {index:'0', label:'全部路线'},
+          {index:'1', label:'主路'},
+          {index:'2', label:'辅路'},
         ]
       }
     },
-    mounted(){
-      this.loadWeiduList2("weiduList2")
-    },
+    mounted(){},
     methods:{
-      loadWeiduList2(val){
-        this.$api.loadWeiduList2(val)
-          .then(res =>{
-            if(res.status === 200){
-              this.weiduList2 = res.data
-            }else{
-              this.$message.error("err")
-            }
-          }).catch(err =>{
-          this.$message.error("err")
-        })
-      },
-      go(title){
-        this.selected = title.alias
-        this.$router.push({
-          name: title.alias
-        })
-      },
       chooseTimeEvent(i){
          this.timeSelected = i.index
       }

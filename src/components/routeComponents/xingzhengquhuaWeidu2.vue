@@ -1,39 +1,30 @@
 <template>
    <div>
-     <trafficEventHeader></trafficEventHeader>
      <div class="xingzhengquhuaWeidu-content">
        <selectorHeader></selectorHeader>
        <div class="echart-wrap">
-         <!--<div class="echart-left">
-           <div id="echart-left-first"></div>
-           <div id="echart-left-second"></div>
-         </div>-->
          <xingzhengquhuaWeiduEcharts></xingzhengquhuaWeiduEcharts>
          <div class="echart-right">
            <trafficEventRanking></trafficEventRanking>
          </div>
        </div>
-
      </div>
    </div>
 </template>
 
 <script>
-  import trafficEventHeader from '../common/trafficEventHeader'
   import selectorHeader from '../common/selectorHeader'
   import trafficEventRanking from '../common/trafficEventRanking'
   import xingzhengquhuaWeiduEcharts from '../common/echarts/trafficEventEcharts/xingzhengquhuaWeiduEcharts'
-
-    export default {
-      name: 'xingzhengquhuaWeidu',
-      components:{
-        trafficEventHeader,
-        selectorHeader,
-        trafficEventRanking,
-        xingzhengquhuaWeiduEcharts
-      },
-      mounted(){}
-    }
+  export default {
+    name: 'xingzhengquhuaWeidu',
+    components:{
+      selectorHeader,
+      trafficEventRanking,
+      xingzhengquhuaWeiduEcharts
+    },
+    mounted(){}
+  }
 </script>
 
 <style scoped lang="scss">

@@ -1,23 +1,16 @@
 <template>
     <div>
       <div>
-        <headerTop :flagHandler="flagHandler" :weiduHandler="weiduHandler"></headerTop>
+        <trafficCountHeader></trafficCountHeader>
       </div>
       <div>
         <router-view/>
       </div>
-      <!--<headerTop :flagHandler="flagHandler" :weiduHandler="weiduHandler"></headerTop>-->
-      <!--<luxianWeidu v-if="weidu==='a'"></luxianWeidu>-->
-      <!--<xingzhengquhuaWeidu v-else-if="weidu==='b'"></xingzhengquhuaWeidu>-->
-      <!--<timeWeidu v-else-if="weidu==='c'"></timeWeidu>-->
     </div>
 </template>
 
 <script>
-  import headerTop from '../common/headerTop'
-  import luxianWeidu from './luxianWeidu'
-  import xingzhengquhuaWeidu from './xingzhengquhuaWeidu'
-  import timeWeidu from './timeWeidu'
+  import trafficCountHeader from '../common/headerTop'
   export default {
     name: "userManage",
     data(){
@@ -25,24 +18,11 @@
         weidu:'', //渲染条件
       }
     },
-    methods:{
-      flagHandler(val){
-        this.flag = val    //根据flag发送请求
-      },
-      weiduHandler(val){
-        this.weidu = val   //根据flag和维度发送请求
-      },
-      showWeidu(){
-
-      }
-    },
+    methods:{},
     components:{
-      headerTop,
-      luxianWeidu,
-      xingzhengquhuaWeidu,
-      timeWeidu
+      trafficCountHeader,
     },
-    }
+  }
 </script>
 
 <style scoped lang="scss"></style>

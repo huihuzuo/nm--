@@ -19,12 +19,12 @@
       },
       mounted () {
         this.type = this.$route.query.type
-        console.log(this.type)
+        //console.log(this.type)
       },
       watch: {
         '$route' (v, ov) {
           this.type = this.$route.query.type
-          console.log(this.$route.query.type)
+          //console.log(this.$route.query.type)
         }
       },
       components:{

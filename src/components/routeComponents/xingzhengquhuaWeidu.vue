@@ -4,10 +4,6 @@
      <div class="xingzhengquhuaWeidu-content">
        <selectorHeader></selectorHeader>
        <div class="echart-wrap">
-         <!--<div class="echart-left">
-           <div id="echart-left-first"></div>
-           <div id="echart-left-second"></div>
-         </div>-->
          <xingzhengquhuaWeiduEchart></xingzhengquhuaWeiduEchart>
          <div class="echart-right">
            <indexRanking></indexRanking>
