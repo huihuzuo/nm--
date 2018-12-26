@@ -15,7 +15,7 @@
     name: "userManage",
     data(){
       return{
-        weidu:'', //渲染条件
+
       }
     },
     methods:{},

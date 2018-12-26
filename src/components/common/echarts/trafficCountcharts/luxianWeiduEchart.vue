@@ -11,6 +11,9 @@
       mounted(){
         this.drawEchart()
       },
+      created(){
+
+      },
       methods:{
         drawEchart(){
           let myChart1 = echarts.init(document.getElementById('echart-left-first'));

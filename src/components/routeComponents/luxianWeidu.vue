@@ -45,7 +45,7 @@
       name: 'luxianWeidu',
       data(){
         return {
-          division: config.range.division,
+          //division: config.range.division,
           region: '',
           value1: '',
           formData:{

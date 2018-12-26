@@ -8,12 +8,12 @@ export const loadNavList = (val) => {
   })
 }
 
-//获取交通流量下的维度weidulist
+/*//获取交通流量下的维度weidulist
 export const loadWeiduList = (val) => {
   return axios.get(`/static/json/${val}.json`, {
     baseUrl: ''
   })
-}
+}*/
 
 //获取交通事件下的维度weidulist2
 export const loadWeiduList2 = (val) => {
@@ -30,3 +30,4 @@ export const loadIndexRanking = (val) => {
 }
 
 
+// 获取交通流量-百度的echarts图表数据

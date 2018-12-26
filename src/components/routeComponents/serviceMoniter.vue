@@ -1,15 +1,15 @@
 <template>
   <div>
-    <trafficCountHeader></trafficCountHeader>
+     服务监控
   </div>
 </template>
 
 <script>
-  import trafficCountHeader from '../common/trafficCountHeader'
+
     export default {
       name: "serviceMoniter",
       components:{
-        trafficCountHeader
+
       }
     }
 </script>

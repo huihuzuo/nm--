@@ -98,7 +98,7 @@
 
 <style scoped lang="scss">
   .trafficHeader-wrap{
-    position:relative;
+    //position:relative;
     width:100%;
     height:50px;
     background-color: #fff;
@@ -135,8 +135,8 @@
       justify-content: center;
       height:50px;
       flex-grow:1;
-      position:absolute;
-      left:600px;
+      //position:absolute;
+      //left:600px;
       .header-choose{
         text-align: center;
         line-height:50px;

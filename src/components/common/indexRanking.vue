@@ -2,8 +2,8 @@
   <div class="content">
     <div class="table-header">
       <div class="bar"></div>
-      <div @click="showRank('1')">拥堵指数排名</div>
-      <div @click="showRank('2')">拥堵频率排名</div>
+      <div @click="showRank('1')" class="rank active">拥堵指数排名</div>
+      <div @click="showRank('2')" class="rank">拥堵频率排名</div>
     </div>
     <el-table
       :header-cell-style="{background:'#ddecfc'}"
@@ -111,6 +111,10 @@
       },
       showRank(flag){
         this.flag=flag
+        $('.table-header .rank').click(function(){
+          $('.table-header .rank').removeClass("active");
+          $(this).addClass("active")
+        })
       }
 
     }
@@ -125,6 +129,9 @@
       width:4px;
       height:13px;
       background-color: rgb(26,130,238);
+    }
+    .active{
+      color: #1a82ee;
     }
     div{
       font-size:12px;

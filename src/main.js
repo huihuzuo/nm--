@@ -8,11 +8,13 @@ import * as api from "./store/api"
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import echarts from "echarts"
+import axios from 'axios'
 
-//import * as echarts from 'echarts'
 
+Vue.prototype.$http = axios
 Vue.prototype.$api = api
 Vue.prototype.$echarts = echarts
+
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false

@@ -233,13 +233,13 @@
   .echart-left{
     width:calc(90% - 400px);
     height:688px;
-  #echart-left-first{
-    width:100%;
-    height:50%;
-  }
-  #echart-left-second{
-    width:90%;
-    height:50%;
-  }
+    #echart-left-first{
+      width:100%;
+      height:50%;
+    }
+    #echart-left-second{
+      width:90%;
+      height:50%;
+    }
   }
 </style>

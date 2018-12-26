@@ -1,15 +1,15 @@
 <template>
   <div>
-    <trafficEventHeader></trafficEventHeader>
+    系统监控
   </div>
 </template>
 
 <script>
-  import trafficEventHeader from "../common/trafficEventHeader.vue"
+
     export default {
       name: "systemMonitor",
       components:{
-        trafficEventHeader
+
       }
     }
 </script>

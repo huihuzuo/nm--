@@ -5,16 +5,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 
-//交通流量下的三个维度路由
-import luxianWeidu from '../components/routeComponents/luxianWeidu'
-import timeWeidu from '../components/routeComponents/timeWeidu'
-import xingzhengquhuaWeidu from '../components/routeComponents/xingzhengquhuaWeidu'
-
-//交通事件下的三个维度路由
-import luxianWeidu2 from '../components/routeComponents/luxianWeidu2'
-import timeWeidu2 from '../components/routeComponents/timeWeidu2'
-import xingzhengquhuaWeidu2 from '../components/routeComponents/xingzhengquhuaWeidu2'
-
 //交通流量-高德/百度 切换
 import trafficBaidu from '../components/routeComponents/trafficBaidu'
 import trafficGaode from '../components/routeComponents/trafficGaode'
@@ -75,7 +65,6 @@ export default new Router({
       path:"/serviceMoniter",
       name:"serviceMoniter",
       component:serviceMoniter,
-      redirect:'/luxianWeidu'
     },
     {
       path:"/systemMonitor",
@@ -163,7 +152,6 @@ export default new Router({
           name:"trafficEventHangye",
           component:trafficEventHangye,
         },
-
       ]
     },
     {
@@ -171,69 +159,5 @@ export default new Router({
       name:"rightManage",
       component:rightManage,
     },
-
-    //接内蒙项目 交通流量 三个维度的路由
-    {
-      path:"/luxianWeidu",
-      name:"luxianWeidu",
-      component:luxianWeidu,
-      children:[
-        {
-          path:'/trafficGaode',
-          component: trafficGaode
-        },
-        {
-          path:'/trafficBaidu',
-          component: trafficBaidu
-        },
-      ]
-    },
-    {
-      path:"/timeWeidu",
-      name:"timeWeidu",
-      component:timeWeidu,
-      children:[
-        {
-          path:'/trafficGaode',
-          component: trafficGaode
-        },
-        {
-          path:'/trafficBaidu',
-          component: trafficBaidu
-        },
-      ]
-    },
-    {
-      path:"/xingzhengquhuaWeidu",
-      name:"xingzhengquhuaWeidu",
-      component:xingzhengquhuaWeidu,
-      children:[
-        {
-          path:'/xingzhengquhuaWeidu/trafficGaode',
-          component: trafficGaode
-        },
-        {
-          path:'/xingzhengquhuaWeidu/trafficBaidu',
-          component: trafficBaidu
-        },
-      ]
-    },
-    //内蒙项目 交通事件 三个维度的路由
-    {
-      path:"/luxianWeidu2",
-      name:"luxianWeidu2",
-      component:luxianWeidu2,
-    },
-    {
-      path:"/timeWeidu2",
-      name:"timeWeidu2",
-      component:timeWeidu2,
-    },
-    {
-      path:"/xingzhengquhuaWeidu2",
-      name:"xingzhengquhuaWeidu2",
-      component:xingzhengquhuaWeidu2,
-    },
-
   ]
 })

@@ -179,6 +179,11 @@
                 type : 'shadow'
               }
             },
+            grid: {
+              y:'25%',
+              bottom:'25%'
+
+            },
             xAxis : [
               {
                 type : 'category',
@@ -274,6 +279,7 @@
   .echarts-wrap {
     width: 100%;
     height: calc(100% - 200px);
+    //height:100%;
     padding: 25px;
     #echart-first, #echart-second {
       width: 80%;
